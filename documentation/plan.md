@@ -5,7 +5,7 @@ Figma länk: [Skiss](https://www.figma.com/file/XC344LdQeJfGkvjkx84BDZ/Slutproje
 #### Torsdag
 Projektstart, skapa README och planera arbetet, lite fil-bygge
 #### Fredag
-Fortsatt planering, skapa GUI-skiss i Figma, skapa listener thread
+Fortsatt planering, skapa GUI-skiss i Figma, skapa listener thread, kort
 
 ### Vecka 18
 #### Torsdag
