@@ -17,6 +17,7 @@ Sjuk
 #### Torsdag
 Nu kan man starta view för både Client och Server, dessutom har jag påbörjat att visa informationen om alla klasser i view.
 #### Fredag
+Göra så att view visar upp information from klasser, skapa den andra view för battle-fönstret
 
 ### Vecka 20
 #### Torsdag
