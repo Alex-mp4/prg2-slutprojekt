@@ -15,6 +15,7 @@ Sjuk
 
 ### Vecka 19
 #### Torsdag
+Nu kan man starta view för både Client och Server, dessutom har jag påbörjat att visa informationen om alla klasser i view.
 #### Fredag
 
 ### Vecka 20
