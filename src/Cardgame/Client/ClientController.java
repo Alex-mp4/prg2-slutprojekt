@@ -10,6 +10,7 @@ public class ClientController extends JFrame {
         this.ClientModel = m;
         this.ClientView = v;
 
+        //ClientView.setRogue(Cardgame.Cards.rogue);
 
         this.setContentPane(ClientView.getPanel());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

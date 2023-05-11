@@ -16,31 +16,31 @@ public class ClientView {
         return panel;
     }
 
-    public JTextArea getTextArea1() {
-        return textArea1;
-    }
-
-    public JTextArea getTextArea2() {
-        return textArea2;
-    }
-
-    public JTextArea getTextArea3() {
-        return textArea3;
-    }
-
-    public JTextArea getTextArea4() {
-        return textArea4;
-    }
-
-    public JTextArea getTextArea5() {
-        return textArea5;
-    }
-
     public JTextField getTextField1() {
         return textField1;
     }
 
     public JButton getButton1() {
         return button1;
+    }
+
+    public void setRogue(String c) {
+        textArea1.setText(c);
+    }
+
+    public void setBarbarian(String c) {
+        textArea2.setText(c);
+    }
+
+    public void setShaman(String c) {
+        textArea3.setText(c);
+    }
+
+    public void setArcher(String c) {
+        textArea4.setText(c);
+    }
+
+    public void setAmalgam(String c) {
+        textArea5.setText(c);
     }
 }

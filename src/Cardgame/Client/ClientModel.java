@@ -12,6 +12,10 @@ public class ClientModel {
     PrintWriter out;
     BufferedReader in;
 
+    //public String getRogue() {
+        //return Cardgame.Cards.rogue;
+    //}
+
     public ClientModel(String ip, int port) {
         try {
             socket = new Socket(ip,port);
