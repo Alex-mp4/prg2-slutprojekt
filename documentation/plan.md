@@ -9,7 +9,9 @@ Fortsatt planering, skapa GUI-skiss i Figma, skapa listener thread, kort
 
 ### Vecka 18
 #### Torsdag
+Sjuk
 #### Fredag
+Sjuk
 
 ### Vecka 19
 #### Torsdag
