@@ -16,31 +16,31 @@ public class ServerView {
         return panel;
     }
 
-    public void setTextArea1(JTextArea textArea1) {
-        this.textArea1 = textArea1;
-    }
-
-    public void setTextArea2(JTextArea textArea2) {
-        this.textArea2 = textArea2;
-    }
-
-    public void setTextArea3(JTextArea textArea3) {
-        this.textArea3 = textArea3;
-    }
-
-    public void setTextArea4(JTextArea textArea4) {
-        this.textArea4 = textArea4;
-    }
-
-    public void setTextArea5(JTextArea textArea5) {
-        this.textArea5 = textArea5;
-    }
-
-    public JTextField getTextField1() {
-        return textField1;
+    public String getTextField() {
+        return textField1.getText();
     }
 
     public JButton getButton1() {
         return button1;
+    }
+
+    public void setRogue(String c) {
+        textArea1.setText(c);
+    }
+
+    public void setBarbarian(String c) {
+        textArea2.setText(c);
+    }
+
+    public void setShaman(String c) {
+        textArea3.setText(c);
+    }
+
+    public void setArcher(String c) {
+        textArea4.setText(c);
+    }
+
+    public void setAmalgam(String c) {
+        textArea5.setText(c);
     }
 }

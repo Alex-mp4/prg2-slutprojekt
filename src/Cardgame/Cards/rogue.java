@@ -7,12 +7,11 @@ public class rogue extends card {
 
     @Override
     public String toString() {
-        return "rogue{" +
-                "name='" + name + '\'' +
-                ", class1='" + class1 + '\'' +
-                ", health=" + health +
-                ", attack=" + attack +
-                ", speed=" + speed +
+        return
+                "class='" + class1 + '\'' + "\n" +
+                "health=" + health + "\n" +
+                "attack=" + attack + "\n" +
+                "speed=" + speed +
                 '}';
     }
 }

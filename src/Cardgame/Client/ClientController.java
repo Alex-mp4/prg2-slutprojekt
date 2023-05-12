@@ -1,6 +1,10 @@
 package Cardgame.Client;
 
+import com.sun.security.ntlm.Client;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ClientController extends JFrame {
     ClientModel ClientModel;
@@ -10,7 +14,20 @@ public class ClientController extends JFrame {
         this.ClientModel = m;
         this.ClientView = v;
 
-        //ClientView.setRogue(Cardgame.Cards.rogue);
+        ClientView.setRogue(m.getRogueStats());
+        ClientView.setArcher(m.getArcherStats());
+        ClientView.setBarbarian(m.getBarbarianStats());
+        ClientView.setShaman(m.getShamanStats());
+        ClientView.setAmalgam(m.getAmalgamStats());
+
+        v.getButton1().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ClientModel.setClass(ClientView.getTextField());
+                System.out.println("Player 1 picked: " + m.class1);
+                ClientModel.getPlayer1Class(m.class1);
+            }
+        });
 
         this.setContentPane(ClientView.getPanel());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

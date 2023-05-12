@@ -1,6 +1,8 @@
 package Cardgame.Server;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ServerController extends JFrame {
     ServerModel ServerModel;
@@ -9,6 +11,21 @@ public class ServerController extends JFrame {
     public ServerController(ServerModel m, ServerView v) {
         this.ServerModel = m;
         this.ServerView = v;
+
+        ServerView.setRogue(m.getRogueStats());
+        ServerView.setArcher(m.getArcherStats());
+        ServerView.setBarbarian(m.getBarbarianStats());
+        ServerView.setShaman(m.getShamanStats());
+        ServerView.setAmalgam(m.getAmalgamStats());
+
+        v.getButton1().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ServerModel.setClass(ServerView.getTextField());
+                System.out.println("Player 2 picked: " + m.class2);
+                ServerModel.getPlayer2Class(m.class2);
+            }
+        });
 
         this.setContentPane(ServerView.getPanel());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

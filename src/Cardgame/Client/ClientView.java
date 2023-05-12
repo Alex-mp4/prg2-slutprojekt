@@ -16,8 +16,8 @@ public class ClientView {
         return panel;
     }
 
-    public JTextField getTextField1() {
-        return textField1;
+    public String getTextField() {
+        return textField1.getText();
     }
 
     public JButton getButton1() {
