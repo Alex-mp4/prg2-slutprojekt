@@ -24,8 +24,15 @@ public class ClientController extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ClientModel.setClass(ClientView.getTextField());
-                System.out.println("Player 1 picked: " + m.class1);
+                //System.out.println("Player 1 picked: " + m.class1);
                 ClientModel.getPlayer1Class(m.class1);
+                ClientModel.setMsg(m.class1);
+                ClientModel.addMessage(ClientModel.getMsg());
+                ClientModel.sendMessage(ClientModel.getMsg());
+                //System.out.println(ClientModel.getChat());
+                ClientModel.setClass2(ClientModel.getClassFromChat());
+                ClientModel.getPlayer2Class(m.class2);
+                System.out.println(m.class2);
             }
         });
 
@@ -48,5 +55,9 @@ public class ClientController extends JFrame {
         m.runProtocol();
         listener.stop();
         m.shutDown();
+    }
+
+    public void newMessage(String msg) {
+        ClientModel.addMessage(msg);
     }
 }

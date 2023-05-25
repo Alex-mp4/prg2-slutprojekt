@@ -27,5 +27,6 @@ Klämdag
 
 ### Vecka 21
 #### Torsdag
-Skapa den andra view för battle-fönstret, skicka motståndarens class till dig
+Skicka motståndarens class till dig, man måste klicka Client-->Server-->Client igen
 #### Fredag
+Lägg classerna mot varandra, skapa den andra view för battle-fönstret

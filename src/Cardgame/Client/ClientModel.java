@@ -20,9 +20,39 @@ public class ClientModel {
     Cardgame.Cards.amalgam amalgam = new amalgam("Amalgamation", "Amalgamation", (int)Math.floor(Math.random() *(35 - 15 + 1) + 15), (int)Math.floor(Math.random() *(8 - 5 + 1) + 5), (int)Math.floor(Math.random() *(6 - 2 + 1) + 2));
 
     String class1 = "";
+    String class2 = "";
+    String msg = "";
+    String chat = "";
     //public String getRogue() {
         //return Cardgame.Cards.rogue;
     //}
+
+    public void sendMessage(String msg) {
+        out.println(msg);
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public String getChat() {
+        return chat;
+    }
+
+    public String getClassFromChat() {
+        chat = getChat();
+        int first = chat.indexOf("\n");
+        String enemyClass = chat.substring(first+1, chat.indexOf("\n", first + 1));
+        return enemyClass;
+    }
+
+    public void addMessage(String msg) {
+        chat += msg + "\n";
+    }
 
     public ClientModel(String ip, int port) {
         try {
@@ -92,6 +122,14 @@ public class ClientModel {
         this.class1 = class1;
     }
 
+    public void setClass2(String class2){
+        this.class2 = class2;
+    }
+
+    public String getTheClass2(String class2){
+        return class2;
+    }
+
     public card getPlayer1Class(String class1) {
         if (class1.equals("rogue")) {
             return new rogue("Rogue", "Rogue", 20, 6, 6);
@@ -103,6 +141,20 @@ public class ClientModel {
             return new barbarian("Barbarian", "Barbarian", 35, 5, 2);
         } else {
             return new amalgam(class1, "Amalgamation", (int) Math.floor(Math.random() * (35 - 15 + 1) + 15), (int) Math.floor(Math.random() * (8 - 5 + 1) + 5), (int) Math.floor(Math.random() * (6 - 2 + 1) + 2));
+        }
+    }
+
+    public card getPlayer2Class(String class2) {
+        if (class2.equals("rogue")) {
+            return new rogue("Rogue", "Rogue", 20, 6, 6);
+        } else if (class2.equals("archer")) {
+            return new archer("Archer", "Archer", 25, 5, 4);
+        } else if (class2.equals("shaman")) {
+            return new shaman("Shaman", "Shaman", 15, 8, 3);
+        } else if (class2.equals("barbarian")) {
+            return new barbarian("Barbarian", "Barbarian", 35, 5, 2);
+        } else {
+            return new amalgam(class2, "Amalgamation", (int) Math.floor(Math.random() * (35 - 15 + 1) + 15), (int) Math.floor(Math.random() * (8 - 5 + 1) + 5), (int) Math.floor(Math.random() * (6 - 2 + 1) + 2));
         }
     }
 }

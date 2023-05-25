@@ -24,6 +24,35 @@ public class ServerModel {
     Cardgame.Cards.amalgam amalgam = new amalgam("Amalgamation", "Amalgamation", (int)Math.floor(Math.random() *(35 - 15 + 1) + 15), (int)Math.floor(Math.random() *(8 - 5 + 1) + 5), (int)Math.floor(Math.random() *(6 - 2 + 1) + 2));
 
     String class2 = "";
+    String class1 = "";
+    String msg = "";
+    String chat = "";
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public String getChat() {
+        return chat;
+    }
+
+    public String getClassFromChat() {
+        chat = getChat();
+        String enemyClass = chat.substring(0, chat.indexOf("\n"));
+        return enemyClass;
+    }
+
+    public void addMessage(String msg) {
+        chat += msg + "\n";
+    }
+
+    public void sendMessage(String msg) {
+        out.println(msg);
+    }
 
     public ServerModel(int port) {
         try {
@@ -98,6 +127,28 @@ public class ServerModel {
 
     public void setClass(String class2) {
         this.class2 = class2;
+    }
+
+    public void setClass2(String class1){
+        this.class1 = class1;
+    }
+
+    public String getTheClass2(String class1){
+        return class1;
+    }
+
+    public card getPlayer1Class(String class1) {
+        if (class1.equals("rogue")) {
+            return new rogue("Rogue", "Rogue", 20, 6, 6);
+        } else if (class1.equals("archer")) {
+            return new archer("Archer", "Archer", 25, 5, 4);
+        } else if (class1.equals("shaman")) {
+            return new shaman("Shaman", "Shaman", 15, 8, 3);
+        } else if (class1.equals("barbarian")) {
+            return new barbarian("Barbarian", "Barbarian", 35, 5, 2);
+        } else {
+            return new amalgam(class1, "Amalgamation", (int) Math.floor(Math.random() * (35 - 15 + 1) + 15), (int) Math.floor(Math.random() * (8 - 5 + 1) + 5), (int) Math.floor(Math.random() * (6 - 2 + 1) + 2));
+        }
     }
 
     public card getPlayer2Class(String class2) {

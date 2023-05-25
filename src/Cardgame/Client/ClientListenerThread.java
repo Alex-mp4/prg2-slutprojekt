@@ -23,7 +23,7 @@ public class ClientListenerThread implements Runnable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            //out.newMessage(msg); <--- ÖPPNA NÄR METOD ÄR FIXAD
+            out.newMessage(msg);
         }
     }
 

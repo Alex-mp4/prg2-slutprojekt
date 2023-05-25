@@ -22,8 +22,15 @@ public class ServerController extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ServerModel.setClass(ServerView.getTextField());
-                System.out.println("Player 2 picked: " + m.class2);
+                //System.out.println("Player 2 picked: " + m.class2);
                 ServerModel.getPlayer2Class(m.class2);
+                ServerModel.setMsg(m.class2);
+                ServerModel.addMessage(ServerModel.getMsg());
+                ServerModel.sendMessage(ServerModel.getMsg());
+                //System.out.println(ServerModel.getChat());
+                ServerModel.setClass2(ServerModel.getClassFromChat());
+                ServerModel.getPlayer1Class(m.class1);
+                System.out.println(m.class1);
             }
         });
 
@@ -47,5 +54,9 @@ public class ServerController extends JFrame {
         m.runProtocol();
         listener.stop();
         m.shutdown();
+    }
+
+    public void newMessage(String msg) {
+        ServerModel.addMessage(msg);
     }
 }
