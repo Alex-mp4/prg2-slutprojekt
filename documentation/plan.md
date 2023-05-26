@@ -30,4 +30,4 @@ Klämdag
 Skicka motståndarens class till dig, man måste klicka Client-->Server-->Client igen
 #### Fredag
 OBS!: Lägg battlelog i samma view som allt annat kanske om inte andra view fungerar
-lägg classerna mot varandra, skapa den andra view för battle-fönstret
+lägg classerna mot varandra, brawl behöver veta vad ClientView och ServerView är
