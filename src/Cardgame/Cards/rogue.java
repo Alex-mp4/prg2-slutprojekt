@@ -11,7 +11,6 @@ public class rogue extends card {
                 "class='" + class1 + '\'' + "\n" +
                 "health=" + health + "\n" +
                 "attack=" + attack + "\n" +
-                "speed=" + speed +
-                '}';
+                "speed=" + speed;
     }
 }

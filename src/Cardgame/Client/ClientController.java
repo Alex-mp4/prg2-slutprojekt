@@ -32,7 +32,14 @@ public class ClientController extends JFrame {
                 //System.out.println(ClientModel.getChat());
                 ClientModel.setClass2(ClientModel.getClassFromChat());
                 ClientModel.getPlayer2Class(m.class2);
+                ClientView.setTextField(m.class2);
                 System.out.println(m.class2);
+                try {
+                    ClientModel.getPlayer1Class(m.class1).brawl(ClientModel.getPlayer2Class(m.class2));
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+
             }
         });
 

@@ -30,7 +30,13 @@ public class ServerController extends JFrame {
                 //System.out.println(ServerModel.getChat());
                 ServerModel.setClass2(ServerModel.getClassFromChat());
                 ServerModel.getPlayer1Class(m.class1);
+                ServerView.setTextField(m.class1);
                 System.out.println(m.class1);
+                try {
+                    ServerModel.getPlayer1Class(m.class2).brawl(ServerModel.getPlayer2Class(m.class1));
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
 

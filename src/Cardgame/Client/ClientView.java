@@ -11,6 +11,8 @@ public class ClientView {
     private JTextField textField1;
     private JButton button1;
     private JPanel panel;
+    private JTextField textField2;
+    private JTextArea textArea6;
 
     public JPanel getPanel() {
         return panel;
@@ -22,6 +24,14 @@ public class ClientView {
 
     public JButton getButton1() {
         return button1;
+    }
+
+    public void setTextField(String c) {
+        textField2.setText(c);
+    }
+
+    public void setTextArea(String c) {
+        textArea6.setText(c);
     }
 
     public void setRogue(String c) {

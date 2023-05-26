@@ -54,6 +54,35 @@ public class ClientModel {
         chat += msg + "\n";
     }
 
+    String name;
+    int health;
+    int attack;
+    int speed;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getClass1() {
+        return class1;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
     public ClientModel(String ip, int port) {
         try {
             socket = new Socket(ip,port);

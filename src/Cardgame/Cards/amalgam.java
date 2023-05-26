@@ -10,7 +10,6 @@ public class amalgam extends card {
         return "class='" + class1 + '\'' + "\n" +
                 "health=" + health + "\n" +
                 "attack=" + attack + "\n" +
-                "speed=" + speed +
-                '}';
+                "speed=" + speed;
     }
 }
