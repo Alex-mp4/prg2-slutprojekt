@@ -1,10 +1,5 @@
 package Cardgame.Cards;
 
-import Cardgame.Client.ClientModel;
-import Cardgame.Client.ClientView;
-import Cardgame.Server.ServerModel;
-import Cardgame.Server.ServerView;
-
 public class card {
     Cardgame.Client.ClientView ClientView;
     Cardgame.Server.ServerView ServerView;
@@ -38,11 +33,6 @@ public class card {
         return speed;
     }
 
-    public card (ClientView ClientView, ServerView ServerView) {
-        this.ClientView = ClientView;
-        this.ServerView = ServerView;
-    }
-
     public void brawl(card enemy) throws InterruptedException {
         int health = this.getHealth();
         int enemyHealth = enemy.getHealth();
@@ -53,71 +43,67 @@ public class card {
         boolean check = true;
 
         if (this.getSpeed() > enemy.getSpeed()) {
-            ServerView.setTextArea(this.getName() + " has " + speed + " speed. You go first.");
-            ClientView.setTextArea(this.getName() + " has " + speed + " speed. You go first.");
+            //ServerView.setTextArea(this.getName() + " has " + speed + " speed. You go first.");
+            //ClientView.setTextArea(this.getName() + " has " + speed + " speed. You go first.");
             System.out.println(this.getName() + " has " + speed + " speed. You go first.");
             while (check == true) {
                 int enemyTempHp = enemy.getHealth();
                 int youTempHp = this.getHealth();
                 enemy.setHealth(enemyTempHp - damage);
                 if (enemy.getHealth() < 1) {
-                    ServerView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has died.");
-                    ClientView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has died.");
+                    //ServerView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has died.");
+                    //ClientView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has died.");
                     System.out.println(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has died.");
                     Thread.sleep(2000);
                     check = false;
-                    System.exit(0);
                 } else {
-                    ClientView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has " + enemy.getHealth() + " health.");
-                    ServerView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has " + enemy.getHealth() + " health.");
+                    //ClientView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has " + enemy.getHealth() + " health.");
+                    //ServerView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has " + enemy.getHealth() + " health.");
                     System.out.println(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has " + enemy.getHealth() + " health.");
                     Thread.sleep(2000);
                     this.setHealth(youTempHp - enemyDamage);
                     if (this.getHealth() < 1) {
-                        ClientView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has died.");
-                        ServerView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has died.");
+                        //ClientView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has died.");
+                        //ServerView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has died.");
                         System.out.println(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has died.");
                         check = false;
-                        System.exit(0);
                     }
                     else {
-                        ClientView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has " + this.getHealth() + " health.");
-                        ServerView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has " + this.getHealth() + " health.");
+                        //ClientView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has " + this.getHealth() + " health.");
+                        //ServerView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has " + this.getHealth() + " health.");
                         System.out.println(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has " + this.getHealth() + " health.");
                         Thread.sleep(2000);
                     }
                 }
             }
         } else {
-            ClientView.setTextArea(enemy.getName() + " has " + enemySpeed + " speed. They go first.");
-            ServerView.setTextArea(enemy.getName() + " has " + enemySpeed + " speed. They go first.");
+            //ClientView.setTextArea(enemy.getName() + " has " + enemySpeed + " speed. They go first.");
+            //ServerView.setTextArea(enemy.getName() + " has " + enemySpeed + " speed. They go first.");
             System.out.println(enemy.getName() + " has " + enemySpeed + " speed. They go first.");
             while (check == true) {
                 int enemyTempHp = enemy.getHealth();
                 int youTempHp = this.getHealth();
                 this.setHealth(youTempHp - enemyDamage);
                 if (this.getHealth() < 1) {
-                    ClientView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has died.");
-                    ServerView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has died.");
+                    //ClientView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has died.");
+                    //ServerView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has died.");
                     System.out.println(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has died.");
                     check = false;
-                    System.exit(0);
                 } else {
-                    ClientView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has " + this.getHealth() + " health.");
-                    ServerView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has " + this.getHealth() + " health.");
+                    //ClientView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has " + this.getHealth() + " health.");
+                    //ServerView.setTextArea(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has " + this.getHealth() + " health.");
                     System.out.println(enemy.getName() + " dealt " + enemyDamage + " damage" + "\n" + this.getName() + " has " + this.getHealth() + " health.");
                     Thread.sleep(2000);
                     enemy.setHealth(enemyTempHp - damage);
                     if (enemy.getHealth() < 1) {
-                        ClientView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has died.");
-                        ServerView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has died.");
+                        //ClientView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has died.");
+                        //ServerView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has died.");
                         System.out.println(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has died.");
                         check = false;
-                        System.exit(0);
                     }
                     else {
-                        ClientView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has " + enemy.getHealth() + " health.");
-                        ServerView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has " + enemy.getHealth() + " health.");
+                        //ClientView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has " + enemy.getHealth() + " health.");
+                        //ServerView.setTextArea(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has " + enemy.getHealth() + " health.");
                         System.out.println(this.getName() + " dealt " + damage + " damage" + "\n" + enemy.getName() + " has " + enemy.getHealth() + " health.");
                         Thread.sleep(2000);
                     }
@@ -127,12 +113,17 @@ public class card {
     }
 
     public card(String name, String class1, int health, int attack, int speed) {
+        //ClientView ClientView, ServerView ServerView,
+        //this.ClientView = ClientView;
+        //this.ServerView = ServerView;
+
         this.name = name;
         this.class1 = class1;
         this.health = health;
         this.attack = attack;
         this.speed = speed;
     }
+
 
     @Override
     public String toString() {
