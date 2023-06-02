@@ -51,7 +51,9 @@ public class ClientController extends JFrame {
     }
 
     public static void main(String[] args) {
-        ClientModel m = new ClientModel("10.80.47.10", 5858);
+        String ip = JOptionPane.showInputDialog("Set IP");
+        //10.80.47.10
+        ClientModel m = new ClientModel(ip, 5858);
         ClientView v = new ClientView();
         ClientController thisIsTheProgram = new ClientController(m,v);
         thisIsTheProgram.setVisible(true);
