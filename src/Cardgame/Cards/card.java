@@ -124,19 +124,6 @@ public class card {
                 }
             }
         }
-        //check = healthCheck();
-    }
-
-    private boolean healthCheck(card enemy) {
-        if (this.getHealth() < 1) {
-            return false;
-        }
-        else if (enemy.getHealth() < 1) {
-            return false;
-        }
-        else {
-            return false;
-        }
     }
 
     public card(String name, String class1, int health, int attack, int speed) {
